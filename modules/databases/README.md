@@ -23,7 +23,7 @@
 
 ## Overview
 
-This Terraform module manages PostgreSQL resources in Azure environments, including database creation, role management, and privilege assignment. It supports both standard PostgreSQL authentication and Azure Active Directory (AAD) integration.
+This Terraform module manages PostgreSQL resources in Azure environments, including database creation, role management, and privilege assignment. It supports both standard PostgreSQL authentication and Azure Entra ID (AAD) integration.
 
 ## Features
 

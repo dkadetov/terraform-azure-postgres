@@ -1,4 +1,4 @@
-# Azure PostgreSQL Flexible Server Terraform Example
+# Azure PostgreSQL Flexible Server: Terraform Example
 
 > **Disclaimer**: This README was generated with the assistance of an AI agent and may contain inaccuracies or errors. Please review and validate the information before implementation.
 

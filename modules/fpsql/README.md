@@ -44,7 +44,7 @@ Creates Azure Flexible PostgreSQL resources for infrastructure. The module deplo
 
 ## Security Resources (Optional)
 - Key Vault secrets for PostgreSQL credentials (`*-fpsql-admin-password`, `*-fpsql-admin-name`)
-- Azure Active Directory authentication and administrators
+- Azure Entra ID authentication and administrators
 
 ## Monitoring Resources (Optional)
 - Diagnostic settings
