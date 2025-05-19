@@ -91,6 +91,17 @@ variable "postgresql_extra_roles" {
   default = {}
 }
 
+variable "postgresql_grant_external_roles" {
+  description = "Map of external PostgreSQL roles to grant role membership."
+
+  type = map(object({
+    role_name   = optional(string, "")
+    grant_roles = optional(list(string), [])
+    is_admin    = optional(bool, false)
+  }))
+  default = {}
+}
+
 variable "postgresql_aad_roles" {
   description = "Map of Azure Active Directory roles for PostgreSQL with privilege settings."
 
