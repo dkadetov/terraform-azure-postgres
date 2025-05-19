@@ -140,3 +140,23 @@ resource "postgresql_grant" "advanced_role_default_schema_privilege" {
     postgresql_database.extra_db
   ]
 }
+
+#----- grant membership for external roles -----#
+
+resource "postgresql_grant_role" "pg_ext_grant_role" {
+  for_each = merge([
+    for name, role in var.postgresql_grant_external_roles : {
+      for grant_role in role.grant_roles : "${name}/${grant_role}" => {
+        role_name  = length(role.role_name) > 0 ? role.role_name : name
+        grant_role = grant_role
+        is_admin   = role.is_admin
+      }
+    }
+  ]...)
+
+  provider = postgresql.main
+
+  role              = each.value.role_name
+  grant_role        = each.value.grant_role
+  with_admin_option = each.value.is_admin
+}

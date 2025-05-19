@@ -67,7 +67,11 @@ resource "terraform_data" "pg_aad_role" {
 resource "postgresql_grant_role" "pg_aad_grant_role" {
   for_each = merge([
     for name, role in var.postgresql_aad_roles : {
-      for grant_role in role.grant_roles : "${name}/${grant_role}" => length(role.role_name) > 0 ? merge(role, { grant_role = "${grant_role}" }) : merge(role, { role_name = "${name}", grant_role = "${grant_role}" })
+      for grant_role in role.grant_roles : "${name}/${grant_role}" => {
+        role_name  = length(role.role_name) > 0 ? role.role_name : name
+        grant_role = grant_role
+        is_admin   = role.is_admin
+      }
     }
   ]...)
 

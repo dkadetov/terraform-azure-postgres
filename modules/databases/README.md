@@ -106,6 +106,7 @@ See the [Examples](#examples) section for detailed usage.
 | extra_databases                    | List of full names of all extra databases.                                                                                      | `list(string)`      |  `[]`   |
 | postgresql_inherited_roles         | Map of PostgreSQL roles with inherited privileges from other roles.                                                             | `map(list(string))` |  `{}`   |
 | postgresql_extra_roles             | Map of additional PostgreSQL roles with detailed privilege configuration.                                                       | `map(object)`       |  `{}`   |
+| postgresql_grant_external_roles    | Map of external PostgreSQL roles to grant role membership.                                                                      | `map(object)`       |  `{}`   |
 | postgresql_aad_roles               | Map of Azure Active Directory roles for PostgreSQL with privilege settings.                                                     | `map(object)`       |  `{}`   |
 | postgresql_aad_role_mapping        | Map of PostgreSQL role mappings to Azure AD objects.                                                                            | `map(object)`       |  `{}`   |
 | postgresql_aad_administrator_login | Azure AD administrator username for PostgreSQL.                                                                                 | `string`            | `null`  |
